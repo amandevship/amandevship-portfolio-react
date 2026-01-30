@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space-darker: var(--space-darker);
+  --color-space-dark: var(--space-dark);
+  --color-space-card: var(--space-card);
+  --color-neon-cyan: #22D3EE;
+  --color-neon-sky: #38BDF8;
+  --color-neon-electric: #0EA5E9;
+  --color-flame-orange: #F59E0B;
+  --color-flame: #FB923C;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-cyan: var(--border-cyan);
+  
+  --background-image-gradient-cyan-blue: linear-gradient(to right, #22D3EE, #0EA5E9);
+  
+  --shadow-glow-cyan: 0 0 15px rgba(34, 211, 238, 0.3);
+  --shadow-glow-cyan-lg: 0 0 25px rgba(34, 211, 238, 0.5);
+  --shadow-glow-orange: 0 0 15px rgba(245, 158, 11, 0.3);
+  
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+}
+
+:root {
+  --space-darker: #F8FAFC;
+  --space-dark: #F1F5F9;
+  --space-card: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --border-cyan: rgba(14, 165, 233, 0.15);
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --star-opacity: 0.05;
+}
+
+.dark {
+  --space-darker: #0B1022;
+  --space-dark: #11172A;
+  --space-card: #0F172A;
+  --text-primary: #E5E7EB;
+  --text-secondary: #94A3B8;
+  --border-cyan: rgba(34, 211, 238, 0.20);
+  --background: #0B1022;
+  --foreground: #E5E7EB;
+  --star-opacity: 0.15;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Background Stars Effect */
+.bg-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at center, var(--space-dark) 0%, var(--space-darker) 100%);
+}
+
+.bg-stars::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 110px 210px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 250px, #fff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: var(--star-opacity);
+  transition: opacity 0.3s ease;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--space-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-cyan);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.glass-hover:hover {
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+}
+
+/* Typography Gradients */
+.text-gradient {
+  background: linear-gradient(to right, #22D3EE, #38BDF8, #0EA5E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Masking Utilities */
+.mask-linear-b {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--space-dark);
+  border-radius: 10px;
+  border: 2px solid var(--space-darker);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22D3EE;
+}
