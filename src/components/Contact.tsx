@@ -12,8 +12,14 @@ export const Contact: React.FC = () => {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!accessKey?.trim()) {
+      setStatus('error');
+      return;
+    }
     setStatus('loading');
     
     try {
@@ -24,7 +30,7 @@ export const Contact: React.FC = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Get your free key from https://web3forms.com/
+          access_key: accessKey.trim(),
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
