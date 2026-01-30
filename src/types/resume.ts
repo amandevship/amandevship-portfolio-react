@@ -16,6 +16,8 @@ export interface Project {
   description: string;
   platform: string;
   techStack: string[];
+  appStoreUrl?: string;
+  playStoreUrl?: string;
 }
 
 export interface Education {

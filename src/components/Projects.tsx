@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { resumeData } from '../data/resume';
-import { ExternalLink, Smartphone } from 'lucide-react';
+import { ExternalLink, Smartphone, Apple, Store } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
@@ -79,13 +79,42 @@ export const Projects: React.FC = () => {
                     ))}
                   </div>
                   
-                  <a
-                    href="#"
-                    className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
-                  >
-                    View Mission Details 
-                    <ExternalLink size={14} className="ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                  </a>
+                  <div className="flex flex-wrap gap-4">
+                    {project.appStoreUrl ? (
+                      <a
+                        href={project.appStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
+                      >
+                        <Apple size={14} className="mr-2" />
+                        App Store
+                        <ExternalLink size={12} className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default" aria-label="App Store link not available">
+                        <Apple size={14} className="mr-2" />
+                        App Store
+                      </span>
+                    )}
+                    {project.playStoreUrl ? (
+                      <a
+                        href={project.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
+                      >
+                        <Store size={14} className="mr-2" />
+                        Play Store
+                        <ExternalLink size={12} className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default" aria-label="Play Store link not available">
+                        <Store size={14} className="mr-2" />
+                        Play Store
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 {/* Corner Accent */}

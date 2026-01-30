@@ -91,43 +91,50 @@ export const resumeData: ResumeData = {
       title: "Aramex",
       description: "Logistics and shipment tracking mobile app (Android & iOS) for courier booking, shipment tracking, and delivery management.",
       platform: "Android & iOS",
-      techStack: ["React Native", "JavaScript", "TypeScript", "Redux", "Redux Thunk"]
+      techStack: ["React Native", "JavaScript", "TypeScript", "Redux", "Redux Thunk"],
+      appStoreUrl: "https://apps.apple.com/in/app/tata-play-live-tv-dth-pack/id385090000"
     },
     {
       title: "Tata Play",
       description: "OTT platform mobile application (Android & iOS) developed with React Native and Redux/Redux Thunk, focused on building and maintaining core app functionality across both platforms.",
       platform: "Android & iOS",
-      techStack: ["React Native", "JavaScript", "TypeScript", "Redux", "Redux Thunk"]
+      techStack: ["React Native", "JavaScript", "TypeScript", "Redux", "Redux Thunk"],
+      appStoreUrl: "https://apps.apple.com/in/app/tata-play-live-tv-dth-pack/id385090000"
     },
     {
       title: "DaMENSCH",
       description: "Men's innerwear e-commerce mobile app (Android & iOS). UI/UX, REST API, third-party integrations, business logic, bug fixes; observability via Crashlytics & Analytics; Asana.",
       platform: "Android & iOS",
-      techStack: ["React Native", "JS", "React", "Hooks", "Redux", "Thunk", "Firebase", "REST", "Crashlytics", "Analytics", "Asana"]
+      techStack: ["React Native", "JS", "React", "Hooks", "Redux", "Thunk", "Firebase", "REST", "Crashlytics", "Analytics", "Asana"],
+      appStoreUrl: "https://apps.apple.com/in/app/damensch/id1663216493"
     },
     {
       title: "OTO SFA",
       description: "Loan leads & insurance for used cars in SEA (Android & iOS). Realm storage, REST/third-party APIs, Firebase, Jest, Jira. Tech includes HOC, Context API, Render Props.",
       platform: "Android & iOS",
-      techStack: ["React Native", "HOC", "Context API", "Render Props", "Realm", "REST", "Firebase", "Jest", "Jira"]
+      techStack: ["React Native", "HOC", "Context API", "Render Props", "Realm", "REST", "Firebase", "Jest", "Jira"],
+      appStoreUrl: "https://apps.apple.com/in/app/oto-sfa/id1489698573"
     },
     {
       title: "OTO Dealer",
       description: "Dealer management SEA (Android & iOS). UI/UX, business logic, REST/third-party APIs, performance optimization, Jest.",
       platform: "Android & iOS",
-      techStack: ["React Native", "REST", "Jest", "Performance Optimization"]
+      techStack: ["React Native", "REST", "Jest", "Performance Optimization"],
+      appStoreUrl: "https://apps.apple.com/in/app/oto-dealer/id1489698884"
     },
     {
       title: "LMS APP",
       description: "Lead management for new car purchases SEA (Android & iOS). SQLite, Firebase, REST APIs, Jest.",
       platform: "Android & iOS",
-      techStack: ["React Native", "SQLite", "Firebase", "REST", "Jest"]
+      techStack: ["React Native", "SQLite", "Firebase", "REST", "Jest"],
+      appStoreUrl: "https://apps.apple.com/in/app/zigwheels-cars-bikes/id704453976"
     },
     {
       title: "Wealth Concert",
       description: "Fund distribution/committee management (Android & iOS). Redux/Thunk, Firebase, social login.",
       platform: "Android & iOS",
-      techStack: ["React Native", "Redux", "Thunk", "Firebase", "Social Login"]
+      techStack: ["React Native", "Redux", "Thunk", "Firebase", "Social Login"],
+      appStoreUrl: "https://apps.apple.com/in/app/wealthconcert/id157651350"
     },
     {
       title: "Vouch",
@@ -145,7 +152,8 @@ export const resumeData: ResumeData = {
       title: "Niine App",
       description: "Period tracking (Android & iOS). Track period/ovulation windows; UI/UX, business logic, REST/third-party, Firebase.",
       platform: "Android & iOS",
-      techStack: ["React Native", "REST", "Firebase"]
+      techStack: ["React Native", "REST", "Firebase"],
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.periodtracker.periodcalendar.ovulation.periodcycle&hl=en"
     },
     {
       title: "Funda E-Learning",
