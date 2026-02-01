@@ -6,6 +6,7 @@ export const resumeData: ResumeData = {
   email: "amandevship@gmail.com",
   phone: "8475962723",
   linkedIn: "https://www.linkedin.com/in/aman-sharma-5475901ba/",
+  github: "https://github.com/amandevship",
   title: "Senior Software Engineer",
   totalExperience: "6+ years",
   professionalSummary: "Senior Software Engineer with 6+ years of experience building and scaling React Native (iOS/Android) applications using JavaScript (ES6+), React Hooks, and Redux/Redux Thunk across e-commerce, OTT, logistics, and lead-management products. Advanced hands-on ownership of App Store/Play Store releases (signing, certificates/provisioning, metadata, hotfixes) and production reliability, including Crashlytics/ANR triage, Firebase Analytics, and Firebase Push Notifications. Strong focus on performance optimization, production debugging, and engineering excellence through Jest testing, CI pipelines, and mentoring/code reviews.",

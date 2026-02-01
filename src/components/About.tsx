@@ -49,14 +49,14 @@ export const About: React.FC = () => {
               {resumeData.professionalSummary}
             </p>
             
-            <div className="grid grid-cols-2 gap-10">
-              <div className="p-6 glass rounded-2xl border-white/5">
-                <h4 className="text-xs font-black text-neon-sky uppercase tracking-[0.2em] mb-2">Location</h4>
-                <p className="text-text-primary font-bold">{resumeData.location}</p>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="aspect-square p-6 glass rounded-2xl border-white/5 flex flex-col justify-center">
+                <h4 className="text-xs font-black text-neon-sky uppercase tracking-[0.2em] mb-3">Location</h4>
+                <p className="text-text-primary font-bold text-sm leading-tight">{resumeData.location}</p>
               </div>
-              <div className="p-6 glass rounded-2xl border-white/5">
-                <h4 className="text-xs font-black text-neon-sky uppercase tracking-[0.2em] mb-2">Email</h4>
-                <p className="text-text-primary font-bold">{resumeData.email}</p>
+              <div className="aspect-square p-6 glass rounded-2xl border-white/5 flex flex-col justify-center">
+                <h4 className="text-xs font-black text-neon-sky uppercase tracking-[0.2em] mb-3">Email</h4>
+                <p className="text-text-primary font-bold text-sm leading-tight break-all">{resumeData.email}</p>
               </div>
             </div>
           </motion.div>

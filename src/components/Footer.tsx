@@ -1,6 +1,6 @@
 import React from 'react';
 import { resumeData } from '../data/resume';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Youtube, Instagram, Twitter } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -14,11 +14,14 @@ export const Footer: React.FC = () => {
           Senior Software Engineer specializing in building and scaling high-performance mobile applications.
         </p>
         
-        <div className="flex justify-center space-x-8 mb-12">
+        <div className="flex justify-center space-x-6 mb-12 flex-wrap gap-y-4">
           {[
             { Icon: Mail, href: `mailto:${resumeData.email}`, label: 'Email' },
             { Icon: Linkedin, href: resumeData.linkedIn, label: 'LinkedIn' },
-            { Icon: Github, href: 'https://github.com/amandevship', label: 'GitHub' }
+            { Icon: Github, href: resumeData.github, label: 'GitHub' },
+            { Icon: Youtube, href: 'https://www.youtube.com/@AmanDevShip', label: 'YouTube' },
+            { Icon: Instagram, href: 'https://www.instagram.com/amandevship/', label: 'Instagram' },
+            { Icon: Twitter, href: 'https://x.com/amandevship', label: 'X (Twitter)' }
           ].map(({ Icon, href, label }) => (
             <a
               key={label}
@@ -28,7 +31,7 @@ export const Footer: React.FC = () => {
               className="p-3 rounded-xl bg-space-card/50 border border-white/5 text-text-secondary hover:text-neon-cyan hover:border-neon-cyan hover:shadow-glow-cyan transition-all duration-300"
               aria-label={label}
             >
-              <Icon size={24} />
+              <Icon size={20} />
             </a>
           ))}
         </div>
