@@ -29,10 +29,10 @@ export const Skills: React.FC = () => {
                 {group.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-4 py-2 bg-space-card/50 rounded-xl text-sm font-bold text-text-secondary border border-neon-cyan/20 hover:border-flame hover:text-flame transition-all duration-300 cursor-default group flex items-center gap-2"
+                    className="px-3 sm:px-4 py-2 bg-space-card/50 rounded-xl text-xs sm:text-sm font-bold text-text-secondary border border-neon-cyan/20 hover:border-flame hover:text-flame transition-all duration-300 cursor-default group flex items-center gap-2"
                   >
-                    <span className="w-1 h-1 rounded-full bg-neon-cyan group-hover:bg-flame transition-colors" />
-                    {skill}
+                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-neon-cyan group-hover:bg-flame transition-colors flex-shrink-0" />
+                    <span className="leading-tight">{skill}</span>
                   </span>
                 ))}
               </div>

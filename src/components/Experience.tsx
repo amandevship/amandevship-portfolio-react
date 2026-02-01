@@ -47,8 +47,8 @@ export const Experience: React.FC = () => {
                 <ul className="space-y-4">
                   {exp.achievements.map((item, i) => (
                     <li key={i} className="flex items-start gap-4 text-text-secondary group/item">
-                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-flame group-hover/item:scale-150 transition-transform shadow-glow-orange" />
-                      <span className="group-hover/item:text-text-primary transition-colors">{item}</span>
+                      <div className="mt-1.5 sm:mt-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-flame group-hover/item:scale-150 transition-transform shadow-glow-orange flex-shrink-0" />
+                      <span className="group-hover/item:text-text-primary transition-colors leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
