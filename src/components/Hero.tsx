@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl leading-relaxed mx-auto">
-            Building scalable cross-platform <span className="text-text-primary font-bold">mobile</span>, <span className="text-text-primary font-bold">web</span>, and <span className="text-text-primary font-bold">backend</span> applications for over {resumeData.totalExperience}.
+            Building scalable cross-platform <span className="text-text-primary font-bold">mobile</span>, <span className="text-text-primary font-bold">web</span> and <span className="text-text-primary font-bold">backend</span> applications for over {resumeData.totalExperience}.
           </p>
         </motion.div>
 

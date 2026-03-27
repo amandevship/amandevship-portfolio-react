@@ -47,7 +47,7 @@ export const resumeData: ResumeData = {
     },
     {
       role: "Software Engineer",
-      company: "New Media Guru India Pvt Ltd. (NMG Technologies)",
+      company: "NMG Technologies",
       period: "Nov 2020 – Mar 2022",
       location: "Gurugram, Haryana, India",
       achievements: [
