@@ -30,7 +30,7 @@ export const Education: React.FC = () => {
                   <p className="text-neon-sky font-black text-sm uppercase tracking-wider mb-3">{edu.institution}</p>
                   <div className="flex items-center gap-4">
                     <span className="text-xs text-text-secondary font-bold px-3 py-1 bg-space-card/50 rounded-lg border border-white/5">Class of {edu.year}</span>
-                    <span className="text-xs px-3 py-1 bg-neon-cyan/10 rounded-lg text-neon-cyan border border-neon-cyan/20 font-black">GPA: {edu.gpa}</span>
+                    <span className="text-xs px-3 py-1 bg-neon-cyan/10 rounded-lg text-neon-cyan border border-neon-cyan/20 font-black">Percentage: {edu.percentage}</span>
                   </div>
                 </motion.div>
               ))}

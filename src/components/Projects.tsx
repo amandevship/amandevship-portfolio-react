@@ -1,15 +1,24 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { resumeData } from '../data/resume';
-import { ExternalLink, Smartphone, Apple, Store } from 'lucide-react';
+import { ExternalLink, Smartphone, Apple, Store, Globe, Monitor, Server } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
 
-  const allTech = ['All', 'React Native'];
+  const allTech = ['All', 'React Native (Mobile)', 'React (Web)', 'Node.js'];
 
   const filteredProjects = useMemo(() => {
     if (filter === 'All') return resumeData.projects;
+    if (filter === 'React Native (Mobile)') {
+      return resumeData.projects.filter(p => p.techStack.includes('React Native'));
+    }
+    if (filter === 'React (Web)') {
+      return resumeData.projects.filter(p => p.techStack.includes('React.js'));
+    }
+    if (filter === 'Node.js') {
+      return resumeData.projects.filter(p => p.techStack.includes('Node.js') || p.techStack.includes('Express.js'));
+    }
     return resumeData.projects.filter(p => p.techStack.includes(filter));
   }, [filter]);
 
@@ -21,20 +30,36 @@ export const Projects: React.FC = () => {
           <h3 className="text-4xl md:text-5xl font-black text-text-primary mb-12">Featured Projects</h3>
           
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {allTech.map((tech) => (
-              <button
-                key={tech}
-                onClick={() => setFilter(tech)}
-                className={`px-8 py-3 rounded-2xl text-sm font-bold transition-all duration-300 border ${
-                  filter === tech
-                    ? 'bg-space-card border-flame text-flame shadow-glow-orange scale-105'
-                    : 'bg-space-card/40 border-neon-cyan/20 text-text-secondary hover:border-neon-cyan/50 hover:text-neon-cyan'
-                } glass`}
-              >
-                {filter === tech && <span className="inline-block w-1.5 h-1.5 rounded-full bg-flame mr-2 shadow-[0_0_5px_#FB923C]" />}
-                {tech}
-              </button>
-            ))}
+            {allTech.map((tech) => {
+              const getIcon = () => {
+                switch (tech) {
+                  case 'React Native (Mobile)':
+                    return <Smartphone size={16} className="mr-2" />;
+                  case 'React (Web)':
+                    return <Monitor size={16} className="mr-2" />;
+                  case 'Node.js':
+                    return <Server size={16} className="mr-2" />;
+                  default:
+                    return null;
+                }
+              };
+
+              return (
+                <button
+                  key={tech}
+                  onClick={() => setFilter(tech)}
+                  className={`px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-300 border flex items-center ${
+                    filter === tech
+                      ? 'bg-space-card border-flame text-flame shadow-glow-orange scale-105'
+                      : 'bg-space-card/40 border-neon-cyan/20 text-text-secondary hover:border-neon-cyan/50 hover:text-neon-cyan'
+                  } glass`}
+                >
+                  {filter === tech && <span className="inline-block w-1.5 h-1.5 rounded-full bg-flame mr-2 shadow-[0_0_5px_#FB923C]" />}
+                  {getIcon()}
+                  {tech}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -80,40 +105,96 @@ export const Projects: React.FC = () => {
                   </div>
                   
                   <div className="flex flex-wrap gap-4">
-                    {project.appStoreUrl ? (
-                      <a
-                        href={project.appStoreUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
-                      >
-                        <Apple size={14} className="mr-2" />
-                        App Store
-                        <ExternalLink size={12} className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default" aria-label="App Store link not available">
-                        <Apple size={14} className="mr-2" />
-                        App Store
-                      </span>
-                    )}
-                    {project.playStoreUrl ? (
-                      <a
-                        href={project.playStoreUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
-                      >
-                        <Store size={14} className="mr-2" />
-                        Play Store
-                        <ExternalLink size={12} className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default" aria-label="Play Store link not available">
-                        <Store size={14} className="mr-2" />
-                        Play Store
-                      </span>
-                    )}
+                    {(() => {
+                      const appUrls = project.appStoreUrls ?? (project.appStoreUrl ? [project.appStoreUrl] : []);
+                      if (appUrls.length === 0) {
+                        return (
+                          <span
+                            className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default"
+                            aria-label="App Store link not available"
+                          >
+                            <Apple size={14} className="mr-2" />
+                            App Store
+                          </span>
+                        );
+                      }
+
+                      return appUrls.map((url, i) => (
+                        <a
+                          key={`${url}-${i}`}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
+                        >
+                          <Apple size={14} className="mr-2" />
+                          {appUrls.length > 1 ? `App Store ${i + 1}` : 'App Store'}
+                          <ExternalLink
+                            size={12}
+                            className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
+                          />
+                        </a>
+                      ));
+                    })()}
+
+                    {(() => {
+                      const playUrls = project.playStoreUrls ?? (project.playStoreUrl ? [project.playStoreUrl] : []);
+                      if (playUrls.length === 0) {
+                        return (
+                          <span
+                            className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default"
+                            aria-label="Play Store link not available"
+                          >
+                            <Store size={14} className="mr-2" />
+                            Play Store
+                          </span>
+                        );
+                      }
+
+                      return playUrls.map((url, i) => (
+                        <a
+                          key={`${url}-${i}`}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
+                        >
+                          <Store size={14} className="mr-2" />
+                          {playUrls.length > 1 ? `Play Store ${i + 1}` : 'Play Store'}
+                          <ExternalLink
+                            size={12}
+                            className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
+                          />
+                        </a>
+                      ));
+                    })()}
+
+                    {project.webAppUrls?.length ? (
+                      project.webAppUrls.map((url, i) => (
+                        project.webAppDisabled ? (
+                          <span
+                            key={`${url}-${i}`}
+                            className="inline-flex items-center text-text-secondary/50 font-black text-xs uppercase tracking-widest cursor-default"
+                            aria-label="Web App link disabled"
+                          >
+                            <Globe size={14} className="mr-2" />
+                            {project.webAppUrls!.length > 1 ? `Web App ${i + 1}` : 'Web App'}
+                          </span>
+                        ) : (
+                          <a
+                            key={`${url}-${i}`}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-neon-cyan font-black text-xs uppercase tracking-widest hover:text-neon-sky transition-colors group/link"
+                          >
+                            <Globe size={14} className="mr-2" />
+                            {project.webAppUrls!.length > 1 ? `Web App ${i + 1}` : 'Web App'}
+                            <ExternalLink size={12} className="ml-1.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                          </a>
+                        )
+                      ))
+                    ) : null}
                   </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { resumeData } from '../data/resume';
-import { Github, Linkedin, Mail, Youtube, Instagram, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, Youtube, Instagram, Twitter, Globe } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -11,12 +11,13 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h3 className="text-2xl font-black text-gradient mb-6 tracking-tighter">Aman Sharma</h3>
         <p className="text-text-secondary mb-10 max-w-md mx-auto font-medium">
-          Senior Software Engineer specializing in building and scaling high-performance mobile applications.
+          Senior Software Engineer building scalable mobile and web applications.
         </p>
         
         <div className="flex justify-center space-x-6 mb-12 flex-wrap gap-y-4">
           {[
             { Icon: Mail, href: `mailto:${resumeData.email}`, label: 'Email' },
+            { Icon: Globe, href: resumeData.website, label: 'Website' },
             { Icon: Linkedin, href: resumeData.linkedIn, label: 'LinkedIn' },
             { Icon: Github, href: resumeData.github, label: 'GitHub' },
             { Icon: Youtube, href: 'https://www.youtube.com/@AmanDevShip', label: 'YouTube' },

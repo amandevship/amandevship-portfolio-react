@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { resumeData } from '../data/resume';
-import { Mail, Phone, MapPin, Send, CheckCircle2, X, Youtube, Instagram, Twitter, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, X, Youtube, Instagram, Twitter, Github, Globe } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -111,53 +111,107 @@ export const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-5 group">
+                  <div className="w-14 h-14 rounded-2xl bg-space-card/80 border border-neon-cyan/20 flex items-center justify-center text-neon-cyan shadow-glow-cyan group-hover:border-neon-cyan transition-all">
+                    <Globe size={24} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-text-secondary font-black uppercase tracking-widest mb-1">Website</p>
+                    <a href={resumeData.website} target="_blank" rel="noopener noreferrer" className="text-lg text-text-primary font-bold hover:text-neon-cyan transition-colors break-all">
+                      {resumeData.website.replace(/^https?:\/\//, '')}
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="mt-12 pt-12 border-t border-white/5">
                 <h5 className="font-bold text-text-primary mb-6">Digital Channels</h5>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <a href={resumeData.linkedIn} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-space-card/50 border border-white/10 hover:border-neon-cyan/30 transition-all hover:scale-105">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-neon-cyan" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                  <a
+                    href={resumeData.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Website"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-neon-cyan/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center">
+                      <Globe className="w-6 h-6 text-neon-cyan" />
+                    </div>
+                  </a>
+
+                  <a
+                    href={resumeData.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-neon-cyan/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center">
+                      <svg className="w-6 h-6 text-neon-cyan" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                       </svg>
                     </div>
-                    <span className="text-sm sm:text-base text-text-primary font-semibold group-hover:text-neon-cyan transition-colors">LinkedIn</span>
                   </a>
-                  
-                  <a href={`mailto:${resumeData.email}`} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-space-card/50 border border-white/10 hover:border-red-500/30 transition-all hover:scale-105">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />
+
+                  <a
+                    href={`mailto:${resumeData.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Email"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-red-500/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-red-500" />
                     </div>
-                    <span className="text-sm sm:text-base text-text-primary font-semibold group-hover:text-red-500 transition-colors">Gmail</span>
                   </a>
-                  
-                  <a href={resumeData.github} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-space-card/50 border border-white/10 hover:border-gray-400/30 transition-all hover:scale-105">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gray-400/10 border border-gray-400/20 flex items-center justify-center flex-shrink-0">
-                      <Github className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300" />
+
+                  <a
+                    href={resumeData.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-gray-400/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-gray-400/10 border border-gray-400/20 flex items-center justify-center">
+                      <Github className="w-6 h-6 text-gray-300" />
                     </div>
-                    <span className="text-sm sm:text-base text-text-primary font-semibold group-hover:text-gray-300 transition-colors">GitHub</span>
                   </a>
-                  
-                  <a href="https://www.youtube.com/@AmanDevShip" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-space-card/50 border border-white/10 hover:border-red-500/30 transition-all hover:scale-105">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
-                      <Youtube className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />
+
+                  <a
+                    href="https://www.youtube.com/@AmanDevShip"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-red-500/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <Youtube className="w-6 h-6 text-red-500" />
                     </div>
-                    <span className="text-sm sm:text-base text-text-primary font-semibold group-hover:text-red-500 transition-colors">YouTube</span>
                   </a>
-                  
-                  <a href="https://www.instagram.com/amandevship/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-space-card/50 border border-white/10 hover:border-pink-500/30 transition-all hover:scale-105">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center flex-shrink-0">
-                      <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-500" />
+
+                  <a
+                    href="https://www.instagram.com/amandevship/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-pink-500/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+                      <Instagram className="w-6 h-6 text-pink-500" />
                     </div>
-                    <span className="text-sm sm:text-base text-text-primary font-semibold group-hover:text-pink-500 transition-colors">Instagram</span>
                   </a>
-                  
-                  <a href="https://x.com/amandevship" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-space-card/50 border border-white/10 hover:border-blue-400/30 transition-all hover:scale-105">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-400/10 border border-blue-400/20 flex items-center justify-center flex-shrink-0">
-                      <Twitter className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+
+                  <a
+                    href="https://x.com/amandevship"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
+                    className="group w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-xl bg-space-card/50 border border-white/10 hover:border-blue-400/30 transition-all hover:scale-105"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-blue-400/10 border border-blue-400/20 flex items-center justify-center">
+                      <Twitter className="w-6 h-6 text-blue-400" />
                     </div>
-                    <span className="text-sm sm:text-base text-text-primary font-semibold group-hover:text-blue-400 transition-colors">X</span>
                   </a>
                 </div>
               </div>

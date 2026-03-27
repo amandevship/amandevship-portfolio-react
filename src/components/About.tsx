@@ -43,7 +43,7 @@ export const About: React.FC = () => {
           >
             <h2 className="text-sm font-bold text-neon-cyan tracking-[0.4em] uppercase mb-6">About Me</h2>
             <h3 className="text-4xl md:text-5xl font-black text-text-primary mb-8 tracking-tight">
-              High-Performance <span className="text-gradient">Mobile Engineering</span>
+              Full-Stack <span className="text-gradient">Mobile & Web</span>
             </h3>
             <p className="text-lg text-text-secondary mb-10 leading-relaxed font-medium">
               {resumeData.professionalSummary}

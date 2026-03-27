@@ -16,6 +16,12 @@ export interface Project {
   description: string;
   platform: string;
   techStack: string[];
+  appStoreUrls?: string[];
+  playStoreUrls?: string[];
+  webAppUrls?: string[];
+  webAppDisabled?: boolean;
+
+  // Backwards compatibility with older resume data shapes.
   appStoreUrl?: string;
   playStoreUrl?: string;
 }
@@ -24,7 +30,7 @@ export interface Education {
   degree: string;
   institution: string;
   year: string;
-  gpa: string;
+  percentage: string;
 }
 
 export interface Certification {
@@ -36,6 +42,7 @@ export interface ResumeData {
   location: string;
   email: string;
   phone: string;
+  website: string;
   linkedIn: string;
   github: string;
   title: string;

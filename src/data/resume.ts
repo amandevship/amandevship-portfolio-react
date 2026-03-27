@@ -5,11 +5,13 @@ export const resumeData: ResumeData = {
   location: "Gurgaon, Haryana, India",
   email: "amandevship@gmail.com",
   phone: "8475962723",
+  website: "https://amandevship.netlify.app",
   linkedIn: "https://www.linkedin.com/in/aman-sharma-5475901ba/",
   github: "https://github.com/amandevship",
   title: "Senior Software Engineer",
   totalExperience: "6+ years",
-  professionalSummary: "Senior Software Engineer with 6+ years of experience building and scaling React Native (iOS/Android) applications using JavaScript (ES6+), React Hooks, and Redux/Redux Thunk across e-commerce, OTT, logistics, and lead-management products. Advanced hands-on ownership of App Store/Play Store releases (signing, certificates/provisioning, metadata, hotfixes) and production reliability, including Crashlytics/ANR triage, Firebase Analytics, and Firebase Push Notifications. Strong focus on performance optimization, production debugging, and engineering excellence through Jest testing, CI pipelines, and mentoring/code reviews.",
+  professionalSummary:
+    "Senior Software Engineer with 6+ years of experience building scalable cross-platform mobile (React Native) and web (React.js) applications. Proven expertise in full-stack development with Node.js, REST and GraphQL APIs, state management (Redux, Redux Toolkit, Context API), and production deployments on the App Store and Play Store. Experienced in performance optimization, technical mentoring, code reviews, and delivering high-impact features in Agile environments across product-led and enterprise teams.",
   workExperience: [
     {
       role: "Senior Software Engineer",
@@ -17,39 +19,44 @@ export const resumeData: ResumeData = {
       period: "Aug 2024 – Dec 2025",
       location: "Noida, UP, India",
       achievements: [
-        "React Native cross-platform apps (iOS/Android) with JavaScript, React Hooks, Redux/Redux Thunk",
-        "Production support & release operations (App Store/Play Store, signing, certs, provisioning, hotfix, incident response, OTA rollout)",
-        "Performance optimization + production debugging using Crashlytics crash/ANR triage",
-        "Mentoring + code reviews",
-        "REST & third-party APIs (payments, social login, analytics), stakeholder collaboration",
-        "Git + agile tools (Asana/Jira)"
+        "Led development of cross-platform mobile applications (Android & iOS) using React Native, improving performance, stability, and user experience.",
+        "Built and enhanced scalable web applications using React.js for enterprise clients across multiple domains.",
+        "Designed and developed backend services using Node.js and Express.js, implementing secure and scalable REST and GraphQL APIs.",
+        "Delivered end-to-end features across frontend and backend, ensuring seamless integration and consistent user experience.",
+        "Optimized application performance by reducing crashes and improving load time through profiling, debugging, and performance tuning.",
+        "Developed reusable and modular components to improve maintainability and accelerate feature delivery.",
+        "Implemented efficient state management using Redux, Redux Toolkit, and Context API for complex data flows.",
+        "Mentored junior developers, conducted code reviews, and enforced best practices and scalable architecture standards.",
+        "Collaborated with cross-functional teams (product, QA, backend) to deliver high-quality features within Agile timelines."
       ]
     },
     {
-      role: "Software Development Engineer II",
+      role: "Software Engineer",
       company: "CarDekho Group",
       period: "Mar 2022 – Apr 2024",
       location: "Gurugram, Haryana, India",
       achievements: [
-        "React Native apps using Hooks, HOC, Context API, Render Props",
-        "Offline/local storage: Realm, SQLite (project dependent)",
-        "Firebase integration",
-        "Unit testing (Jest, coverage targets) + integration testing (API mocking/E2E where applicable)",
-        "CI pipelines (Bitbucket Pipelines/GitHub Actions/Jenkins)",
-        "Automated build/release workflows (Fastlane/Bitrise/Codemagic)",
-        "Agile execution using Jira; performance optimization & defect resolution"
+        "Developed and enhanced cross-platform mobile applications (Android & iOS) using React Native for large-scale dealer and lead management platforms serving users in South East Asia.",
+        "Built scalable and high-performance web applications using React.js for dealer operations and insurance/loan management systems.",
+        "Integrated RESTful and GraphQL APIs, ensuring seamless data synchronization between frontend and backend systems.",
+        "Implemented local data storage using Realm DB, enabling offline capabilities and improved performance.",
+        "Delivered end-to-end features across mobile and web, ensuring consistency and seamless user experience across platforms.",
+        "Wrote unit and integration tests using Jest to ensure code quality and stability.",
+        "Collaborated with cross-functional teams (product, QA, backend) in Agile environments using Jira."
       ]
     },
     {
-      role: "React Native Developer",
+      role: "Software Engineer",
       company: "New Media Guru India Pvt Ltd. (NMG Technologies)",
       period: "Nov 2020 – Mar 2022",
       location: "Gurugram, Haryana, India",
       achievements: [
-        "React Native with Hooks, Redux/Redux Thunk",
-        "UI/UX + REST API integrations",
-        "Social login (Google/Facebook/Apple) + analytics tools",
-        "Debugging + issue resolution; Git + Jira; iterative client feedback"
+        "Developed cross-platform mobile (React Native) and web (React.js) applications for social networking (Vouch) and fintech fund management (Wealth Concert) platforms.",
+        "Implemented state management using Redux and Redux Thunk to handle complex data flows and real-time updates.",
+        "Integrated Firebase services for authentication, real-time data handling, analytics, and push notifications.",
+        "Implemented social login integrations (Google, Facebook) to improve user onboarding experience.",
+        "Integrated RESTful APIs for user data, financial transactions, social interactions, and backend communication.",
+        "Optimized application performance, improving load time, responsiveness, and overall user experience."
       ]
     },
     {
@@ -58,134 +65,144 @@ export const resumeData: ResumeData = {
       period: "Apr 2019 – Oct 2020",
       location: "Gurugram, Haryana, India",
       achievements: [
-        "React Native features iOS/Android (JavaScript + React)",
-        "UI/UX + REST + third-party integrations",
-        "Performance optimization, bug fixing, validating test cases before QA",
-        "Stakeholder requirement gathering"
+        "Developed cross-platform mobile (React Native) and web (React.js) applications for e-commerce (Sunny E-Store) and health-tech (Niine) domains.",
+        "Implemented core product features including product listing, search, cart, checkout flows, and health tracking functionalities.",
+        "Integrated RESTful and third-party APIs for payments, order management, user data, and health insights.",
+        "Implemented data-driven features such as cycle tracking, reminders, and predictive insights for the Niine health application.",
+        "Integrated Firebase services for authentication, push notifications, and analytics.",
+        "Optimized application performance, improving load time and overall user experience."
       ]
     }
   ],
   skills: [
     {
-      category: "Mobile & Frontend",
-      skills: ["React Native (iOS & Android)", "JavaScript (ES6+)", "React", "React Hooks", "Redux", "Redux Thunk", "State management", "GraphQL"]
+      category: "Mobile",
+      skills: ["React Native", "Android Studio", "Xcode", "iOS", "Android", "Realm DB", "Firebase"]
     },
     {
-      category: "Performance & Reliability",
-      skills: ["Performance optimization (React Native)", "Production debugging", "Crashlytics (crash/ANR monitoring & triage)", "Firebase Analytics", "Push Notifications", "OTA updates planning & rollout (CodePush/other)"]
+      category: "Frontend",
+      skills: [
+        "React.js",
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Redux",
+        "Redux Toolkit",
+        "Redux Thunk",
+        "Context API",
+        "React Query",
+        "React Hooks"
+      ]
     },
     {
-      category: "Release & DevOps",
-      skills: ["App Store/Play Store submission & metadata", "Certificates/provisioning/signing", "Hotfix releases & incident response", "CI pipelines (Bitbucket Pipelines/GitHub Actions/Jenkins)", "Automated mobile builds/releases (Fastlane/Bitrise/Codemagic)"]
+      category: "Backend",
+      skills: ["Node.js", "Express.js", "REST APIs", "GraphQL"]
     },
     {
-      category: "Testing & Database",
-      skills: ["Unit testing (Jest) + coverage targets", "Integration testing (API mocking, E2E where applicable)", "Realm", "SQLite"]
+      category: "Databases",
+      skills: ["MongoDB", "PostgreSQL", "Realm DB", "Firebase Realtime Database"]
     },
     {
-      category: "Tools & Leadership",
-      skills: ["Git", "Bitbucket", "Jira", "Asana", "Zoho", "Mentoring", "Code reviews"]
+      category: "Testing",
+      skills: ["Jest", "Unit Testing", "Integration Testing"]
+    },
+    {
+      category: "Tools & DevOps",
+      skills: ["Git", "GitHub", "Jira", "Asana", "Crashlytics", "New Relic", "Firebase Analytics"]
+    },
+    {
+      category: "App Distribution",
+      skills: ["App Store (iOS)", "Google Play Store (Android)"]
     }
   ],
   projects: [
     {
       title: "Aramex",
-      description: "Logistics and shipment tracking mobile app (Android & iOS) for courier booking, shipment tracking, and delivery management.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "JavaScript", "TypeScript", "Redux", "Redux Thunk"],
-      appStoreUrl: "https://apps.apple.com/in/app/tata-play-live-tv-dth-pack/id385090000"
-    },
-    {
-      title: "Tata Play",
-      description: "OTT platform mobile application (Android & iOS) developed with React Native and Redux/Redux Thunk, focused on building and maintaining core app functionality across both platforms.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "JavaScript", "TypeScript", "Redux", "Redux Thunk"],
-      appStoreUrl: "https://apps.apple.com/in/app/tata-play-live-tv-dth-pack/id385090000"
+      description:
+        "Revamped and optimized a large-scale logistics and shipment tracking platform across mobile (React Native), web (React.js), and backend (Node.js). Improved backend REST APIs and data flow using Node.js and Express.js; optimized MongoDB query performance and schema design. Refactored the codebase to improve maintainability, scalability, and performance. Resolved production issues and improved application reliability through debugging and monitoring.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "Redux", "React Query", "REST APIs"],
+      appStoreUrls: ["https://apps.apple.com/in/app/aramex/id1246178925"],
+      playStoreUrls: ["https://play.google.com/store/apps/details?id=com.aramex.mobile&hl=en"],
+      webAppUrls: ["https://aramex.com/track/shipments"]
     },
     {
       title: "DaMENSCH",
-      description: "Men's innerwear e-commerce mobile app (Android & iOS). UI/UX, REST API, third-party integrations, business logic, bug fixes; observability via Crashlytics & Analytics; Asana.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "JS", "React", "Hooks", "Redux", "Thunk", "Firebase", "REST", "Crashlytics", "Analytics", "Asana"],
-      appStoreUrl: "https://apps.apple.com/in/app/damensch/id1663216493"
-    },
-    {
-      title: "OTO SFA",
-      description: "Loan leads & insurance for used cars in SEA (Android & iOS). Realm storage, REST/third-party APIs, Firebase, Jest, Jira. Tech includes HOC, Context API, Render Props.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "HOC", "Context API", "Render Props", "Realm", "REST", "Firebase", "Jest", "Jira"],
-      appStoreUrl: "https://apps.apple.com/in/app/oto-sfa/id1489698573"
+      description:
+        "Built and enhanced a full-stack e-commerce platform for men’s apparel across mobile (React Native), web (React.js), and backend (Node.js). Designed and enhanced REST/GraphQL APIs for product listings, authentication, order management, and payments. Monitored and resolved production issues using Crashlytics, Firebase Analytics, and New Relic. Implemented advanced state management using Redux and Redux Toolkit to handle complex user interactions.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "Node.js", "MongoDB", "TypeScript", "Redux Toolkit", "GraphQL", "Firebase", "New Relic"],
+      appStoreUrls: ["https://apps.apple.com/in/app/damensch/id1663216493"],
+      playStoreUrls: ["https://play.google.com/store/apps/details?id=com.damensch.app"],
+      webAppUrls: ["https://www.damensch.com/men/innerwear"]
     },
     {
       title: "OTO Dealer",
-      description: "Dealer management SEA (Android & iOS). UI/UX, business logic, REST/third-party APIs, performance optimization, Jest.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "REST", "Jest", "Performance Optimization"],
-      appStoreUrl: "https://apps.apple.com/in/app/oto-dealer/id1489698884"
+      description:
+        "Developed and maintained a dealer management platform for South East Asia across mobile and web. Utilized Realm DB for efficient local data storage and offline capabilities; wrote unit and integration tests using Jest.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "TypeScript", "Redux", "Realm DB", "GraphQL", "Firebase", "Jest"],
+      appStoreUrls: ["https://apps.apple.com/in/app/oto-dealer/id1489698884"],
+      playStoreUrls: ["https://play.google.com/store/apps/details?id=com.oto.dealer"],
+      webAppUrls: ["https://www.oto.com/en"]
     },
     {
-      title: "LMS APP",
-      description: "Lead management for new car purchases SEA (Android & iOS). SQLite, Firebase, REST APIs, Jest.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "SQLite", "Firebase", "REST", "Jest"],
-      appStoreUrl: "https://apps.apple.com/in/app/zigwheels-cars-bikes/id704453976"
-    },
-    {
-      title: "Wealth Concert",
-      description: "Fund distribution/committee management (Android & iOS). Redux/Thunk, Firebase, social login.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "Redux", "Thunk", "Firebase", "Social Login"],
-      appStoreUrl: "https://apps.apple.com/in/app/wealthconcert/id157651350"
+      title: "OTO SFA",
+      description:
+        "Developed and maintained a loan/insurance lead management platform for South East Asia across mobile and web. Utilized Realm DB for efficient local data storage and offline capabilities; wrote unit and integration tests using Jest.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "TypeScript", "Redux", "Realm DB", "GraphQL", "Firebase", "Jest"],
+      appStoreUrls: ["https://apps.apple.com/in/app/oto-sfa/id1489698573"],
+      playStoreUrls: ["https://play.google.com/store/apps/details?id=com.oto.sfa"],
+      webAppUrls: ["https://sfa.oto.com/user-login"]
     },
     {
       title: "Vouch",
-      description: "Social feed (Instagram-like) (Android & iOS). Redux/Thunk, Firebase, REST, social login.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "Redux", "Thunk", "Firebase", "REST", "Social Login"]
+      description:
+        "Built a social networking application across Android, iOS, and web. Implemented social feeds, likes, comments, and user profiles with real-time updates.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "Redux", "Redux Thunk", "Firebase", "REST APIs"],
+      webAppUrls: ["https://www.vouchtheapp.com/"],
+      webAppDisabled: true
+    },
+    {
+      title: "Wealth Concert",
+      description:
+        "Built a fintech fund management application across Android, iOS, and web. Implemented fund distribution and financial transaction tracking features with secure backend integrations.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "Redux", "Firebase", "REST APIs"],
+      appStoreUrls: ["https://apps.apple.com/in/app/wealthconcert/id157651350"],
+      webAppUrls: ["https://nmgtechnologies.com/success-stories/wealth-concert"]
+    },
+    {
+      title: "Niine",
+      description:
+        "Developed a period tracking and ovulation calendar app across Android, iOS, and web. Implemented predictive cycle analytics and Firebase authentication.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "Redux", "Firebase", "REST APIs"],
+      playStoreUrls: ["https://play.google.com/store/apps/details?id=com.periodtracker.periodcalendar.ovulation.periodcycle&hl=en"],
+      webAppUrls: ["https://www.niine.com/period-predictor.php"],
+      webAppDisabled: true
     },
     {
       title: "Sunny E-Store",
-      description: "E-commerce gadgets (Android & iOS). UI/UX, business logic, REST/third-party, Firebase.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "REST", "Firebase"]
-    },
-    {
-      title: "Niine App",
-      description: "Period tracking (Android & iOS). Track period/ovulation windows; UI/UX, business logic, REST/third-party, Firebase.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "REST", "Firebase"],
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.periodtracker.periodcalendar.ovulation.periodcycle&hl=en"
-    },
-    {
-      title: "Funda E-Learning",
-      description: "Tutor-student booking/bidding (Android & iOS). Firebase + REST/third-party.",
-      platform: "Android & iOS",
-      techStack: ["React Native", "Firebase", "REST"]
+      description:
+        "Developed an e-commerce gadget platform across Android, iOS, and web. Implemented cart/checkout flows and third-party payment integrations.",
+      platform: "Mobile & Web",
+      techStack: ["React Native", "React.js", "Redux", "Firebase", "REST APIs"],
+      webAppUrls: ["https://sunny.com.mm/"],
+      webAppDisabled: true
     }
   ],
   education: [
     {
-      degree: "Bachelor's Degree",
-      institution: "College Of Engineering Roorkee",
+      degree: "Bachelor of Technology, Computer Science",
+      institution: "College of Engineering Roorkee",
       year: "2017",
-      gpa: "7.4"
-    },
-    {
-      degree: "12th",
-      institution: "HR College Amnour",
-      year: "2012",
-      gpa: "7.85"
-    },
-    {
-      degree: "10th",
-      institution: "High School Amnour",
-      year: "2009",
-      gpa: "7.85"
+      percentage: "70%"
     }
   ],
   certifications: [
-    {
-      name: "ChatGPT and GPT-4 LLM Guide – Prompt Engineering"
-    }
   ]
 };
