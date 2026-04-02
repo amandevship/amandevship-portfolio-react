@@ -1,44 +1,57 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from '../redux/store/store';
+import { REDUX_CONFIG } from '../redux/config';
 import {
+  useAppSelector,
+  useAppDispatch,
   increment,
   decrement,
   incrementByAmount,
   incrementAsync,
-  decrementAsync
-} from '../redux/actions/counterActions';
+  decrementAsync,
+} from '../redux';
+
+const useSelector = useAppSelector;
+const useDispatch = useAppDispatch;
+
+const actions = {
+  increment,
+  decrement,
+  incrementByAmount,
+  incrementAsync,
+  decrementAsync,
+};
 
 export const CounterTest: React.FC = () => {
-  const count = useAppSelector((state) => state.counter.value);
-  const isLoading = useAppSelector((state) => state.counter.isLoading);
-  const dispatch = useAppDispatch();
+  const count = useSelector((state: any) => state.counter.value);
+  const isLoading = useSelector((state: any) => state.counter.isLoading);
+  const dispatch = useDispatch();
 
   const handleIncrement = () => {
     console.log('🔵 Dispatching: increment()');
-    dispatch(increment());
+    dispatch(actions.increment() as any);
     console.log('📊 Current count:', count + 1);
   };
 
   const handleDecrement = () => {
     console.log('🔵 Dispatching: decrement()');
-    dispatch(decrement());
+    dispatch(actions.decrement() as any);
     console.log('📊 Current count:', count - 1);
   };
 
   const handleIncrementByAmount = () => {
     console.log('🔵 Dispatching: incrementByAmount(5)');
-    dispatch(incrementByAmount(5));
+    dispatch(actions.incrementByAmount(5) as any);
     console.log('📊 Current count:', count + 5);
   };
 
   const handleIncrementAsync = () => {
     console.log('🔵 Dispatching: incrementAsync(3) - async action starting...');
-    dispatch(incrementAsync(3));
+    dispatch(actions.incrementAsync(3) as any);
   };
 
   const handleDecrementAsync = () => {
     console.log('🔵 Dispatching: decrementAsync(2) - async action starting...');
-    dispatch(decrementAsync(2));
+    dispatch(actions.decrementAsync(2) as any);
   };
 
   return (
@@ -104,12 +117,23 @@ export const CounterTest: React.FC = () => {
         <h3 className="text-lg font-semibold text-text-primary mb-2">
           Redux Implementation Status:
         </h3>
+        <div className="mb-4 p-3 bg-neon-cyan/10 border border-neon-cyan/30 rounded">
+          <p className="text-neon-cyan font-semibold">
+            🚀 Active Implementation: <span className="text-flame">{REDUX_CONFIG.isReduxToolkit ? 'Redux Toolkit' : 'Redux + Redux Thunk'}</span>
+          </p>
+          <p className="text-text-secondary text-sm mt-1">
+            {REDUX_CONFIG.isReduxToolkit 
+              ? 'Using modern Redux Toolkit with createSlice and createAsyncThunk'
+              : 'Using traditional Redux with separate action creators and redux-thunk middleware'
+            }
+          </p>
+        </div>
         <ul className="text-sm text-text-secondary space-y-1">
           <li>✅ Redux Store configured</li>
-          <li>✅ Redux Thunk middleware added</li>
-          <li>✅ Counter reducer implemented</li>
+          <li>✅ {REDUX_CONFIG.isReduxToolkit ? 'Redux Toolkit' : 'Redux Thunk'} middleware added</li>
+          <li>✅ Counter {REDUX_CONFIG.isReduxToolkit ? 'slice' : 'reducer'} implemented</li>
           <li>✅ Sync actions working</li>
-          <li>✅ Async thunks working</li>
+          <li>✅ Async {REDUX_CONFIG.isReduxToolkit ? 'thunks' : 'actions'} working</li>
           <li>✅ TypeScript types defined</li>
           <li>✅ React hooks configured</li>
         </ul>

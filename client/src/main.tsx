@@ -5,7 +5,12 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
-import { store } from './redux/store/store'
+import { getActiveStore, getStoreInfo } from './redux/storeFactory'
+
+const store = getActiveStore();
+const storeInfo = getStoreInfo();
+
+console.log(`🔧 Redux Implementation: ${storeInfo.implementation}`);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
