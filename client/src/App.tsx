@@ -10,6 +10,7 @@ import { Education } from './components/portfolio/Education';
 import { Contact } from './components/portfolio/Contact';
 import { Footer } from './components/portfolio/Footer';
 import { AdminApp } from './components/admin/AdminApp';
+import { CounterTest } from './components/CounterTest';
 
 function PortfolioApp() {
   return (
@@ -24,6 +25,10 @@ function PortfolioApp() {
         <Projects />
         <Education />
         <Contact />
+        {/* Redux Test Component */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <CounterTest />
+        </div>
       </main>
       <Footer />
     </div>

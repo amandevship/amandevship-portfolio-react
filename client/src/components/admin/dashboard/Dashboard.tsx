@@ -12,6 +12,7 @@ import {
   Code,
   GraduationCap
 } from 'lucide-react';
+import { CounterTest } from '../../CounterTest';
 
 interface StatCard {
   title: string;
@@ -234,6 +235,13 @@ export const Dashboard: React.FC = () => {
             </motion.button>
           ))}
         </div>
+      </div>
+
+      {/* Counter Test Section */}
+      <div className="bg-space-dark/50 border border-neon-cyan/20 rounded-xl p-6">
+        <h2 className="text-xl font-semibold text-text-primary mb-4">Redux Counter Test</h2>
+        <p className="text-text-secondary mb-4">Test the Redux store functionality below:</p>
+        <CounterTest />
       </div>
     </div>
   );
