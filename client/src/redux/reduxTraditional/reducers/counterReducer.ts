@@ -3,7 +3,9 @@ import {
   DECREMENT,
   INCREMENT_BY_AMOUNT,
   INCREMENT_ASYNC,
-  DECREMENT_ASYNC
+  DECREMENT_ASYNC,
+  INCREMENT_ASYNC_SUCCESS,
+  DECREMENT_ASYNC_SUCCESS
 } from '../actions/counterActions';
 
 // Counter state interface
@@ -47,6 +49,13 @@ export const counterReducer = (
       return {
         ...state,
         isLoading: true
+      };
+
+    case INCREMENT_ASYNC_SUCCESS:
+    case DECREMENT_ASYNC_SUCCESS:
+      return {
+        ...state,
+        isLoading: false
       };
     
     default:
