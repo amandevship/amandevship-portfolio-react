@@ -1995,6 +1995,7 @@ __metadata:
   resolution: "amandevship-portfolio-monorepo@workspace:."
   dependencies:
     typescript: "npm:^5.0.0"
+    zod: "npm:^4.3.6"
   languageName: unknown
   linkType: soft
 
