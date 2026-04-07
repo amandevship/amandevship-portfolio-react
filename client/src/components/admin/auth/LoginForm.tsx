@@ -15,10 +15,20 @@ import {
 } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import type { LoginCredentials } from '../../../types/auth';
+import { OTPTimer } from './OTPTimer';
+
+const phoneLoginSchema = z.object({
+  phone: z.string().min(10, 'Phone number must be at least 10 digits'),
+});
+
+const emailLoginSchema = z.object({
+  email: z.string().email('Invalid email address'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
+});
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address').optional(),
-  phone: z.string().regex(/^\+91[\d\s-()]{10,15}$/, 'Invalid Indian phone number. Use +91 format').optional(),
+  phone: z.string().min(10, 'Phone number must be at least 10 digits').optional(),
   password: z.string().min(6, 'Password must be at least 6 characters'),
 });
 
@@ -43,15 +53,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   const [showPassword, setShowPassword] = useState(false);
   const [showOtpInput, setShowOtpInput] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [otpSent, setOtpSent] = useState(false);
+  const [isResendingOtp, setIsResendingOtp] = useState(false);
+  const [otpTimerKey, setOtpTimerKey] = useState(0);
 
-  const {
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(showOtpInput ? otpSchema : loginSchema),
-  });
-
-  const emailForm = useForm({ resolver: zodResolver(loginSchema) });
-  const phoneForm = useForm({ resolver: zodResolver(loginSchema) });
+  const emailForm = useForm({ resolver: zodResolver(emailLoginSchema) });
+  const phoneForm = useForm({ resolver: zodResolver(phoneLoginSchema) });
   const otpForm = useForm({ resolver: zodResolver(otpSchema) });
 
   const handleEmailLogin = (data: any) => {
@@ -62,22 +69,66 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     }
   };
 
-  const handlePhoneLogin = (data: any) => {
+  const handlePhoneLogin = async (data: any) => {
+    console.log('handlePhoneLogin called with data:', data);
+    console.log('showOtpInput:', showOtpInput);
+    
     if (showOtpInput) {
       onSubmit({ phone: phoneNumber, otp: data.otp });
     } else {
       setPhoneNumber(data.phone);
-      setShowOtpInput(true);
+      
+      // Simulate sending OTP with loading
+      try {
+        console.log('Starting OTP sending process...');
+        // Here you would typically make an API call to send OTP
+        // await sendOtpApi(data.phone);
+        
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // For demo purposes, we'll just show OTP input
+        setOtpSent(true);
+        setShowOtpInput(true);
+        
+        // Reset and start the OTP timer by changing key
+        setOtpTimerKey(prev => prev + 1);
+        
+        // Reset OTP sent message after 3 seconds
+        setTimeout(() => setOtpSent(false), 3000);
+        
+        console.log(`OTP sent to ${data.phone}`);
+      } catch (error) {
+        console.error('Failed to send OTP:', error);
+        // Handle error - show error message to user
+      }
     }
   };
 
-  const handleSendOtp = () => {
-    // In a real app, this would send OTP to the phone/email
-    setShowOtpInput(true);
+  const handleSendOtp = async () => {
+    setIsResendingOtp(true);
+    try {
+      // Simulate API call to resend OTP
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Show success message
+      setOtpSent(true);
+      setTimeout(() => setOtpSent(false), 3000);
+      
+      // Restart the timer by changing key
+      setOtpTimerKey(prev => prev + 1);
+      
+      console.log('OTP resent successfully');
+    } catch (error) {
+      console.error('Failed to resend OTP:', error);
+    } finally {
+      setIsResendingOtp(false);
+    }
   };
 
   const handleBackToLogin = () => {
     setShowOtpInput(false);
+    setOtpSent(false);
     phoneForm.reset();
     otpForm.reset();
   };
@@ -149,6 +200,20 @@ export const LoginForm: React.FC<LoginFormProps> = ({
                 className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm"
               >
                 {error}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* OTP Sent Success Message */}
+          <AnimatePresence>
+            {otpSent && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="mb-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm mobile-success"
+              >
+                ✓ OTP sent successfully to your phone number
               </motion.div>
             )}
           </AnimatePresence>
@@ -278,14 +343,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({
               >
                 <div>
                   <label className="block text-sm font-medium text-text-secondary mb-2">
-                    Indian Phone Number
+                    Phone Number
                   </label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
                     <input
                       {...phoneForm.register('phone')}
                       type="tel"
-                      placeholder="+91 98765 43210"
+                      placeholder="Enter your phone number"
                       className="w-full pl-10 pr-4 py-3 bg-space-card/50 border border-neon-cyan/20 rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan"
                     />
                   </div>
@@ -358,24 +423,20 @@ export const LoginForm: React.FC<LoginFormProps> = ({
                     )}
                   </div>
 
-                  <div className="flex space-x-3">
-                    <button
-                      type="button"
-                      onClick={handleSendOtp}
-                      className={cn(
-                        'flex-1 py-3 px-4 rounded-lg text-sm font-medium transition-all',
-                        loginMethod === 'phone'
-                          ? 'bg-neon-cyan text-space-darker'
-                          : 'bg-neon-cyan text-space-darker'
-                      )}
-                    >
-                      Resend Code
-                    </button>
+                  <div className="flex flex-col space-y-3">
+                    <OTPTimer 
+                      key={otpTimerKey}
+                      initialTime={60}
+                      onResend={handleSendOtp}
+                      isResending={isResendingOtp}
+                      className="w-full"
+                      autoStart={true}
+                    />
                     <button
                       type="submit"
                       disabled={isLoading}
                       className={cn(
-                        'flex-1 py-3 bg-gradient-to-r from-neon-cyan to-flame text-space-darker font-semibold rounded-lg hover:shadow-glow-cyan transition-all disabled:opacity-50 disabled:cursor-not-allowed',
+                        'w-full py-3 bg-gradient-to-r from-neon-cyan to-flame text-space-darker font-semibold rounded-lg hover:shadow-glow-cyan transition-all disabled:opacity-50 disabled:cursor-not-allowed',
                         loginMethod === 'phone'
                           ? 'bg-gradient-to-r from-neon-cyan to-flame'
                           : 'bg-gradient-to-r from-neon-cyan to-flame'

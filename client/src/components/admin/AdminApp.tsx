@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LoginForm } from './auth/LoginForm';
+import { ResponsiveLoginForm } from './auth/ResponsiveLoginForm';
 import { AdminLayout } from './layout/AdminLayout';
 import { Dashboard } from './dashboard/Dashboard';
 import type { User } from '../../types/auth';
@@ -58,6 +58,30 @@ export function AdminApp() {
     }
   };
 
+  const handleBiometricLogin = async () => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      // Simulate biometric login
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      const mockUser: User = {
+        id: '1',
+        name: 'Aman Sharma',
+        email: 'admin@biometric.com',
+        role: 'admin',
+        lastLogin: new Date(),
+      };
+      
+      setUser(mockUser);
+    } catch (err) {
+      setError('Biometric authentication failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleLogout = () => {
     setUser(null);
     setError(null);
@@ -67,9 +91,10 @@ export function AdminApp() {
     return (
       <div className="min-h-screen bg-space-darker text-text-primary">
         <div className="bg-stars" />
-        <LoginForm
+        <ResponsiveLoginForm
           onSubmit={handleLogin}
           onSocialLogin={handleSocialLogin}
+          onBiometricLogin={handleBiometricLogin}
           isLoading={isLoading}
           error={error}
         />
