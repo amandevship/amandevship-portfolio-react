@@ -7,9 +7,9 @@
   ],
   "scripts": {
     "install:all": "yarn install",
-    "build:client": "yarn workspace amandevship build",
+    "build:client": "yarn workspace client build",
     "build:server": "yarn workspace server build",
-    "start:client": "yarn workspace amandevship dev",
+    "start:client": "yarn workspace client dev",
     "start:server": "yarn workspace server dev",
     "test": "yarn workspaces foreach run test"
   },
