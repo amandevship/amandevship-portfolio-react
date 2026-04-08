@@ -44,6 +44,7 @@ interface MobileLoginFormProps {
   onBiometricLogin?: () => void;
   isLoading?: boolean;
   error?: string | null;
+  onSwitchToSignup?: () => void;
 }
 
 export const MobileLoginForm: React.FC<MobileLoginFormProps> = ({
@@ -52,6 +53,7 @@ export const MobileLoginForm: React.FC<MobileLoginFormProps> = ({
   onBiometricLogin,
   isLoading = false,
   error = null,
+  onSwitchToSignup,
 }) => {
   const [loginMethod, setLoginMethod] = useState<'email' | 'phone'>('email');
   const [showPassword, setShowPassword] = useState(false);
@@ -488,6 +490,21 @@ export const MobileLoginForm: React.FC<MobileLoginFormProps> = ({
             </div>
           )}
         </motion.div>
+      </div>
+
+      {/* Signup Link */}
+      <div className="px-6 pb-4">
+        <div className="text-center">
+          <p className="text-text-secondary text-sm">
+            Don't have an account?{' '}
+            <button
+              onClick={onSwitchToSignup}
+              className="text-neon-cyan hover:text-neon-cyan/80 font-medium"
+            >
+              Sign Up
+            </button>
+          </p>
+        </div>
       </div>
 
       {/* Security Badge */}

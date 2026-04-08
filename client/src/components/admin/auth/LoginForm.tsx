@@ -41,6 +41,7 @@ interface LoginFormProps {
   onSocialLogin: (provider: string) => void;
   isLoading?: boolean;
   error?: string | null;
+  onSwitchToSignup?: () => void;
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({
@@ -48,6 +49,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   onSocialLogin,
   isLoading = false,
   error = null,
+  onSwitchToSignup,
 }) => {
   const [loginMethod, setLoginMethod] = useState<'email' | 'phone'>('email');
   const [showPassword, setShowPassword] = useState(false);
@@ -484,6 +486,19 @@ export const LoginForm: React.FC<LoginFormProps> = ({
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Signup Link */}
+        <div className="mt-6 text-center">
+          <p className="text-text-secondary text-sm">
+            Don't have an account?{' '}
+            <button
+              onClick={onSwitchToSignup}
+              className="text-neon-cyan hover:text-neon-cyan/80 font-medium"
+            >
+              Sign Up
+            </button>
+          </p>
         </div>
 
         {/* Footer */}

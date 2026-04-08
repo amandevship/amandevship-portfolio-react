@@ -11,6 +11,7 @@ import { Contact } from './components/portfolio/Contact';
 import { Footer } from './components/portfolio/Footer';
 import { AdminApp } from './components/admin/AdminApp';
 import { CounterTest } from './components/CounterTest';
+import SignupPage from './pages/SignupPage';
 
 function PortfolioApp() {
   return (
@@ -40,6 +41,7 @@ function App() {
     <Routes>
       <Route path="/" element={<PortfolioApp />} />
       <Route path="/admin" element={<AdminApp />} />
+      <Route path="/admin/signup" element={<SignupPage />} />
     </Routes>
   );
 }

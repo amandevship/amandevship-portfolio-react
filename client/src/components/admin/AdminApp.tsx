@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ResponsiveLoginForm } from './auth/ResponsiveLoginForm';
+import { SignupForm } from './auth/SignupForm';
 import { AdminLayout } from './layout/AdminLayout';
 import { Dashboard } from './dashboard/Dashboard';
 import type { User } from '../../types/auth';
@@ -8,6 +9,7 @@ export function AdminApp() {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showSignup, setShowSignup] = useState(false);
 
   const handleLogin = async (credentials: any) => {
     setIsLoading(true);
@@ -87,17 +89,47 @@ export function AdminApp() {
     setError(null);
   };
 
+  const handleSignup = async (signupData: any) => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      // Simulate API call for registration
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log('Signup data:', signupData);
+      
+      // After successful signup, switch to login
+      setShowSignup(false);
+      setError('Account created successfully! Please sign in.');
+    } catch (err) {
+      setError('Registration failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   if (!user) {
     return (
       <div className="min-h-screen bg-space-darker text-text-primary">
         <div className="bg-stars" />
-        <ResponsiveLoginForm
-          onSubmit={handleLogin}
-          onSocialLogin={handleSocialLogin}
-          onBiometricLogin={handleBiometricLogin}
-          isLoading={isLoading}
-          error={error}
-        />
+        {showSignup ? (
+          <SignupForm
+            onSubmit={handleSignup}
+            isLoading={isLoading}
+            error={error}
+            onSwitchToLogin={() => setShowSignup(false)}
+          />
+        ) : (
+          <ResponsiveLoginForm
+            onSubmit={handleLogin}
+            onSocialLogin={handleSocialLogin}
+            onBiometricLogin={handleBiometricLogin}
+            isLoading={isLoading}
+            error={error}
+            onSwitchToSignup={() => setShowSignup(true)}
+          />
+        )}
       </div>
     );
   }

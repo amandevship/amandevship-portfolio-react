@@ -9,6 +9,7 @@ interface ResponsiveLoginFormProps {
   onBiometricLogin?: () => void;
   isLoading?: boolean;
   error?: string | null;
+  onSwitchToSignup?: () => void;
 }
 
 export const ResponsiveLoginForm: React.FC<ResponsiveLoginFormProps> = ({
@@ -17,6 +18,7 @@ export const ResponsiveLoginForm: React.FC<ResponsiveLoginFormProps> = ({
   onBiometricLogin,
   isLoading,
   error,
+  onSwitchToSignup,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -39,6 +41,7 @@ export const ResponsiveLoginForm: React.FC<ResponsiveLoginFormProps> = ({
         onBiometricLogin={onBiometricLogin}
         isLoading={isLoading}
         error={error}
+        onSwitchToSignup={onSwitchToSignup}
       />
     );
   }
@@ -49,6 +52,7 @@ export const ResponsiveLoginForm: React.FC<ResponsiveLoginFormProps> = ({
       onSocialLogin={onSocialLogin}
       isLoading={isLoading}
       error={error}
+      onSwitchToSignup={onSwitchToSignup}
     />
   );
 };
