@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Node.js API server with Express, MongoDB, and TypeScript",
   "main": "index.js",
-  "packageManager": "yarn@4.6.0",
   "scripts": {
     "dev": "concurrently \"yarn dev:server\" \"yarn dev:build\"",
     "dev:server": "nodemon --exec ts-node src/index.ts",
