@@ -1,7 +1,11 @@
+import dotenv from "dotenv";
 import express from "express";
 import { adminRouter } from "./routes/admin";
 import { connectMongoDB } from "./config/connection";
 import { logReqRes } from "./middleware";
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
