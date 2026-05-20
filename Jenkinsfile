@@ -46,8 +46,8 @@ pipeline {
        stage('Deploy to Netlify') {
     steps {
         withCredentials([
-            string(credentialsId: 'nfp_8BPsCc58xRqz4oXC1kk8MMimUMEJaGDy1528', variable: 'NETLIFY_AUTH_TOKEN'),
-            string(credentialsId: '13ec27ef-2760-4961-9ec9-7fafd39c5b88', variable: 'NETLIFY_SITE_ID')
+           string(credentialsId: 'netlify-token', variable: 'NETLIFY_AUTH_TOKEN'),
+           string(credentialsId: 'netlify-site-id', variable: 'NETLIFY_SITE_ID')
         ]) {
             sh '''
                 export PATH="/Users/amansharma/.nvm/versions/node/v22.22.2/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
