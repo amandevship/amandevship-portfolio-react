@@ -12,8 +12,6 @@
     "build:server": "yarn workspace server build",
     "start:client": "yarn workspace client dev",
     "start:server": "yarn workspace server dev",
-    "start:mobile": "yarn workspace mobile start",
-    "reset:metro": "yarn workspace mobile start --reset-cache",
     "test": "yarn workspaces foreach run test"
   },
   "devDependencies": {
