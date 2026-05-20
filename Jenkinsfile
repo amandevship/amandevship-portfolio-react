@@ -43,29 +43,30 @@ pipeline {
                 '''
             }
         }
-       stage('Deploy to Netlify') {
-    steps {
-        withCredentials([
-           string(credentialsId: 'netlify-token', variable: 'NETLIFY_AUTH_TOKEN'),
-           string(credentialsId: 'netlify-site-id', variable: 'NETLIFY_SITE_ID')
-        ]) {
-            sh '''
-                export PATH="/Users/amansharma/.nvm/versions/node/v22.22.2/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
-                npm install -g netlify-cli
-                netlify deploy --prod \
-                    --dir=client/dist \
-                     --auth=$NETLIFY_AUTH_TOKEN \
-                    --site=$NETLIFY_SITE_ID
-            '''
+
+        stage('Deploy to Netlify') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'netlify-token', variable: 'NETLIFY_AUTH_TOKEN'),
+                    string(credentialsId: 'netlify-site-id', variable: 'NETLIFY_SITE_ID')
+                ]) {
+                    sh '''
+                        export PATH="/Users/amansharma/.nvm/versions/node/v22.22.2/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+                        npm install -g netlify-cli
+                        netlify deploy --prod \
+                            --dir=client/dist \
+                            --auth=$NETLIFY_AUTH_TOKEN \
+                            --site=$NETLIFY_SITE_ID
+                    '''
+                }
+            }
         }
-    }
-}
 
     }
 
     post {
         success {
-            echo '✅ Client build completed successfully!'
+            echo '✅ Client deployed to Netlify successfully!'
         }
         failure {
             echo '❌ Pipeline failed. Check the logs above.'
