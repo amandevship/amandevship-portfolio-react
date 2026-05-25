@@ -57,7 +57,6 @@ pipeline {
                             --dir=client/dist \
                             --auth=$NETLIFY_AUTH_TOKEN \
                             --site=$NETLIFY_SITE_ID \
-                            --alias=amansharmadev.dev
                     '''
                 }
             }
