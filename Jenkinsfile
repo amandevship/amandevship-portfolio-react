@@ -56,7 +56,8 @@ pipeline {
                         netlify deploy --prod \
                             --dir=client/dist \
                             --auth=$NETLIFY_AUTH_TOKEN \
-                            --site=$NETLIFY_SITE_ID
+                            --site=$NETLIFY_SITE_ID \
+                            --alias=amansharmadev.dev
                     '''
                 }
             }
@@ -66,7 +67,7 @@ pipeline {
 
     post {
         success {
-            echo '✅ Client deployed to Netlify successfully!'
+            echo '✅ Client deployed to amansharmadev.dev successfully!'
         }
         failure {
             echo '❌ Pipeline failed. Check the logs above.'
