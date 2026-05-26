@@ -20,7 +20,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/amandevship/amandevship-portfolio-react.git'
+                    url: 'https://github.com/amansharmadevdotdev/amandevship-portfolio-react.git'
             }
         }
 
