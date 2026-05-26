@@ -29,7 +29,7 @@ export const About: React.FC = () => {
                 whileInView={{ rotate: 5, scale: 1 }}
                 className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-cyan-blue rounded-full flex flex-col items-center justify-center text-space-darker p-4 shadow-glow-cyan rotate-3 border-4 border-space-darker"
               >
-                <span className="text-3xl font-black">6+</span>
+                <span className="text-3xl font-black">6.5+</span>
                 <span className="text-[9px] font-black uppercase tracking-wider text-center mt-1">Years Production Engineering</span>
               </motion.div>
             </div>
