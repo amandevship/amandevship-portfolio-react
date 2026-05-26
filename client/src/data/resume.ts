@@ -11,7 +11,7 @@ export const resumeData: ResumeData = {
   title: "Senior Software Engineer",
   totalExperience: "6+ years",
   professionalSummary:
-    "Senior Software Engineer with 6+ years of experience building scalable cross-platform mobile (React Native) and web (React.js) applications. Proven expertise in full-stack development with Node.js, REST and GraphQL APIs, state management (Redux, Redux Toolkit, Context API), and production deployments on the App Store and Play Store. Experienced in performance optimization, technical mentoring, code reviews, and delivering high-impact features in Agile environments across product-led and enterprise teams.",
+    "Senior Software Engineer with 6.5+ years of experience building scalable cross-platform mobile (React Native) and web (React.js) applications. Proven expertise in full-stack development with Node.js, REST and GraphQL APIs, state management (Redux, Redux Toolkit, Context API), and production deployments on the App Store and Play Store. Experienced in performance optimization, technical mentoring, code reviews, and delivering high-impact features in Agile environments across product-led and enterprise teams.",
   workExperience: [
     {
       role: "Senior Software Engineer",
