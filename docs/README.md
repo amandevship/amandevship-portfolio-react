@@ -269,7 +269,7 @@ netlify deploy --prod --dir=dist
 - 📖 Check [documentation](./docs/)
 - 🐛 [Report issues](https://github.com/amandevship/portfolio/issues)
 - 💬 [Discussions](https://github.com/amandevship/portfolio/discussions)
-- 📧 Contact: amandevship@gmail.com
+- 📧 Contact: amansharmadev.dev@gmail.com
 
 ### FAQ
 
@@ -296,6 +296,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ by [Aman Sharma](https://amandevship.netlify.app)**
+**Built with ❤️ by [Aman Sharma](https://amansharmadev.dev/)**
 
 *Senior Software Engineer | React Native | React.js | Node.js*

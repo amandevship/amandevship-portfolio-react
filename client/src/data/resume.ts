@@ -3,13 +3,13 @@ import { ResumeData } from '../types/resume';
 export const resumeData: ResumeData = {
   name: "Aman Sharma",
   location: "Gurgaon, Haryana, India",
-  email: "amandevship@gmail.com",
-  phone: "8475962723",
-  website: "https://amandevship.netlify.app",
+  email: "amansharmadev.dev@gmail.com",
+  phone: "8929717151",
+  website: "https://amansharmadev.dev/",
   linkedIn: "https://www.linkedin.com/in/aman-sharma-5475901ba/",
-  github: "https://github.com/amandevship",
+  github: "https://github.com/amansharmadevdotdev",
   title: "Senior Software Engineer",
-  totalExperience: "6+ years",
+  totalExperience: "6.5+ years",
   professionalSummary:
     "Senior Software Engineer with 6.5+ years of experience building scalable cross-platform mobile (React Native) and web (React.js) applications. Proven expertise in full-stack development with Node.js, REST and GraphQL APIs, state management (Redux, Redux Toolkit, Context API), and production deployments on the App Store and Play Store. Experienced in performance optimization, technical mentoring, code reviews, and delivering high-impact features in Agile environments across product-led and enterprise teams.",
   workExperience: [

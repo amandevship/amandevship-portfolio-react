@@ -179,7 +179,7 @@ export const Contact: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://www.youtube.com/@AmanDevShip"
+                    href="https://www.youtube.com/@amansharmadevdotdev"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="YouTube"

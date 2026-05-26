@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
             { Icon: Globe, href: resumeData.website, label: 'Website' },
             { Icon: Linkedin, href: resumeData.linkedIn, label: 'LinkedIn' },
             { Icon: Github, href: resumeData.github, label: 'GitHub' },
-            { Icon: Youtube, href: 'https://www.youtube.com/@AmanDevShip', label: 'YouTube' },
+            { Icon: Youtube, href: 'https://www.youtube.com/@amansharmadevdotdev', label: 'YouTube' },
             { Icon: Instagram, href: 'https://www.instagram.com/amandevship/', label: 'Instagram' },
             { Icon: Twitter, href: 'https://x.com/amandevship', label: 'X (Twitter)' }
           ].map(({ Icon, href, label }) => (
